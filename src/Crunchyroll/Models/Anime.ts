@@ -12,6 +12,8 @@ export class Anime
     public subtitle:string[] = [];
     public imageUrl:string = "";
     public rating:number = 0;
+    public seasons: number = 0;
+    public episodeCount:number = 0;
 
     public episodes:Episode[] = [];
 }

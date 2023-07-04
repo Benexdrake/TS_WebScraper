@@ -12,16 +12,11 @@ let main = async () =>
         const page:Page = await browser.newPage();
         await page.setViewport({width: 0, height: 0, deviceScaleFactor: 1});
 
-        const cr = new Crunchyroll_API(page);
-        const urls = await cr.GetAnimeUrls();
-        console.log(urls.length)
+        
 
-        for(const url of urls)
-        {
-            const anime = await cr.GetAnime(url.urlAdress);
-            console.log(anime);
-            break;
-        }
+
+
+        
 
         page.close();
         browser.close();

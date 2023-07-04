@@ -65,6 +65,18 @@ export class AnimeBuilder
         return this;
     }
 
+    public episodeCount(episodeCount:number) : AnimeBuilder
+    {
+        this.anime.episodeCount = episodeCount;
+        return this;
+    }
+
+    public seasons(seasons:number) : AnimeBuilder
+    {
+        this.anime.seasons = seasons;
+        return this;
+    }
+
     public episodes(episodes:Episode[]) : AnimeBuilder
     {
         this.anime.episodes = episodes;
