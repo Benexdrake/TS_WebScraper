@@ -21,4 +21,5 @@ export class Pokemon
     specialAttack:number = 0;
     specialDefense:number = 0;
     speed:number = 0;
+    variant: boolean = false;
 }

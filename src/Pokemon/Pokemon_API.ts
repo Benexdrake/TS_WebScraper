@@ -27,6 +27,9 @@ export class Pokemon_API
                     {
                         const variantName = await variants[i].evaluate(x => x.innerText);
                         const p = await this.getPokemonDetails(i, variantName, this.page);
+                        if(i > 0)
+                            p.variant = true
+                        
                         p.nr = nr;
                         pokemons.push(p);
                     }
