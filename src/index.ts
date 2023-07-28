@@ -5,6 +5,8 @@ import { Pokemon } from "./Pokemon/Models/Pokemon";
 import { Amazon_API } from "./Amazon/Amazon_API";
 import { AniDb_API } from "./AniDb/Controller/AniDb_API";
 
+let fs = require('fs');
+
 
 let main = async () =>
 {
@@ -25,6 +27,12 @@ let main = async () =>
                 console.log(`${i} - ${poke[0].name}`)
                 for(const pokemon of poke)
                     pokemons.push(pokemon)
+
+                if(i % 10 === 0)
+                {
+                    let json = JSON.stringify(pokemons);
+                    fs.writeFile('pokemons.json', json, 'utf8', () => {} );
+                }
             }
             browser.close();
             browser.disconnect();
@@ -34,7 +42,7 @@ let main = async () =>
 
         let json = JSON.stringify(pokemons);
 
-        let fs = require('fs');
+        
         fs.writeFile('pokemons.json', json, 'utf8', () => {} );
     }
     catch (error)
